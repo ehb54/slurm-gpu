@@ -1,5 +1,7 @@
 # slurm-gpu
 
+Currently as setup on demeler9
+
 ## adding users
 ```
 sacctmgr create user USERNAME account=compute-account adminlevel=None
