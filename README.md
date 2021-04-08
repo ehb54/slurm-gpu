@@ -17,7 +17,7 @@ sacctmgr list user
 ```
 srun -n1 hostname
 ```
- - one gpu job, one core
+ - gpu job, one gpu one core
 ```
 srun --gres=gpu:1 -n1 nvidia-smi
 ```
