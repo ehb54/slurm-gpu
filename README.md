@@ -21,7 +21,27 @@ srun -n1 hostname
 ```
 srun --gres=gpu:1 -n1 nvidia-smi
 ```
-
+## submit with slurm
+ - gpu job, 1 gpu, 10 cores
+   - create gpu-test.slurm containing
+```
+#!/bin/bash                                                                                                                                                                                                           
+#SBATCH --job-name=gpu-test                                                                                                                                                                                            
+#SBATCH --output=stdout.%j                                                                                                                                                                                            
+#SBATCH --error=stderr.%j                                                                                                                                                                                             
+#SBATCH --ntasks=1                                                                                                                                                                                                    
+#SBATCH --cpus-per-task=10                                                                                                                                                                                            
+#SBATCH --time=01:00:00                                                                                                                                                                                               
+                                                                                                                                                                                                                      
+echo Start = `date`                                                                                                                                                                                                   
+echo JOB ID = $SLURM_JOB_ID                                                                                                                                                                                           
+nvidia-smi                                                                                                                                                                                                            
+echo Finish = `date`
+```
+  - submit
+```
+sbatch --gres=gpu:1 gpu-test.slurm
+```
 ## how it was setup
 
  - assumption: slurm is already installed and running for localhost submission
