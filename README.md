@@ -59,7 +59,7 @@ sacctmgr create user us3 account=compute-account adminlevel=None
 ```
 
 ## possible improvements
- - we have 2 sockets in demeler9 - setting CPU Affinity as described [here](https://github.com/dholt/slurm-gpu) might provide a performance increase
+ - we have 2 sockets in demeler9 - setting CPU Affinity as described [here](https://github.com/dholt/slurm-gpu) might provide a performance increase when running multi-GPU jobs
    - e.g. bind sockets to GPUs so that a GPU job is not using 2 different physical CPUs
  - will this interfere with regular non-GPU jobs?
    - i.e. if an assigned socket is loaded with non-GPU jobs and a new GPU job is requested assigned to the same socket, it seems likely the GPU job would have to wait in queue  
