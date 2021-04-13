@@ -83,3 +83,16 @@ sacctmgr create user us3 account=compute-account adminlevel=None
    - e.g. bind sockets to GPUs so that a GPU job is not using 2 different physical CPUs
  - will this interfere with regular non-GPU jobs?
    - i.e. if an assigned socket is loaded with non-GPU jobs and a new GPU job is requested assigned to the same socket, it seems likely the GPU job would have to wait in queue  
+
+# Software List
+| Module Name | Prerequisites | Description | 
+|  ---  | :---: | --- |
+| gromacs/2020.5 | - | thread-MPI; command : gmx|
+|  gromacs/2020.5-double | mpi/mpich-x86_64 | double precision; not supports GPU; command : gmx_mpi_d | 
+| gromacs/2020.5-mpi | mpi/mpich-x86_64 | MPI support; command : gmx_mpi |
+| gromacs/2020.5-plumed | mpi/mpich-x86_64; plumed/2.7.0 | Coupled with PLUMED for enhanced-sampling; command : gmx_mpi |
+| lammps/double | mpi/mpich-x86_64 | version 2020; double precision; command : lmp|
+| lammps/single | mpi/mpich-x86_64 | version 2020; single precision; command : lmp|
+| namd/2.14 | mpi/mpich-x86_64 | command : namd2|
+| namd/3.0 | mpi/mpich-x86_64 | command : namd3|
+| openmm/7.5.0 | python/anaconda3; plumed/2.7.0 (optional) | command : python my_code.py |
