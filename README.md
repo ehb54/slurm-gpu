@@ -86,9 +86,9 @@ sacctmgr create user us3 account=compute-account adminlevel=None
 
 # Software List
 | Module Name | Prerequisites | Description | 
-|  ---  | :---: | --- |
-| gromacs/2020.5 | - | thread-MPI; command : gmx|
-|  gromacs/2020.5-double | mpi/mpich-x86_64 | double precision; not supports GPU; command : gmx_mpi_d | 
+|  ---  | --- | --- |
+| gromacs/2020.5 | - | thread-MPI support; command : gmx|
+| gromacs/2020.5-double | mpi/mpich-x86_64 | double precision; not supports GPU; command : gmx_mpi_d | 
 | gromacs/2020.5-mpi | mpi/mpich-x86_64 | MPI support; command : gmx_mpi |
 | gromacs/2020.5-plumed | mpi/mpich-x86_64; plumed/2.7.0 | Coupled with PLUMED for enhanced-sampling; command : gmx_mpi |
 | lammps/double | mpi/mpich-x86_64 | version 2020; double precision; command : lmp|
