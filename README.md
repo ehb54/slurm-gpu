@@ -96,3 +96,4 @@ sacctmgr create user us3 account=compute-account adminlevel=None
 | namd/2.14 | mpi/mpich-x86_64 | command : namd2|
 | namd/3.0 | mpi/mpich-x86_64 | command : namd3|
 | openmm/7.5.0 | python/anaconda3; plumed/2.7.0 (optional) | command : python my_code.py |
+| amber/20 | mpi/mpich-x86_64 | AmberTools 20; not supports GPU|
