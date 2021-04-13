@@ -13,11 +13,11 @@ sacctmgr list user
 ```
 
 ## verify
- - regular job, one core
+ - regular job, one cpu core
 ```
 srun -n1 hostname
 ```
- - gpu job, one gpu one core
+ - gpu job, one gpu one cpu core
 ```
 srun --gres=gpu:1 -n1 nvidia-smi
 ```
@@ -42,6 +42,14 @@ echo Finish = `date`
 ```
 sbatch --gres=gpu:1 gpu-test.slurm
 ```
+
+## interactive job
+ - interactive session (i.e. a regular linux command line), 1 gpu, 4 cpu cores:
+```
+$ env PS1="slurm $" srun --pty -n 4 --gres=gpu:1 bash
+```
+ You will get a ```slurm $``` prompt which will let you know you are running under slurm.
+ - be sure to exit when you are done to free the resources.
 ## how it was setup
 
  - assumption: slurm is already installed and running for localhost submission
