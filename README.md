@@ -44,9 +44,9 @@ sbatch --gres=gpu:1 gpu-test.slurm
 ```
 
 ## interactive job
- - interactive session (i.e. a regular linux command line), 1 gpu, 4 cpu cores:
+ - interactive session (i.e. a regular linux command line), 1 gpu, 4 cpu cores for 0 hours and 10 minutes:
 ```
-$ env PS1="slurm $ " srun --pty --gres=gpu:1 -n 4 bash
+$ env PS1="slurm $ " srun --pty --gres=gpu:1 -n 4 -t 00:10:00 bash
 ```
  You will get a ```slurm $``` prompt which will let you know you are running under slurm.
  - be sure to exit when you are done to free the resources.
